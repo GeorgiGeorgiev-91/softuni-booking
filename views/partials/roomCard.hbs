@@ -1,5 +1,17 @@
-<li>
-    <strong>{{ name }} - {{price}}€</strong>
-    <p>{{description}}</p>
-    <p><a href="/catalog/{{id}}">View Details</a></p>
+<li class="item">
+    <header class="pad-med">
+        <h2>{{name}}</h2>
+    </header>
+
+    <main class="align-center">
+
+        <img class="img-thumb" src="{{imgURL}}">
+
+    </main>
+
+    <footer class="align-center pad-med">
+        <p>Location: <strong>{{city}}</strong></p>
+        <p>Price: <strong>{{price}}€</strong></p>
+        <a class="action" href="/catalog/{{id}}">See details</a>
+    </footer>
 </li>
