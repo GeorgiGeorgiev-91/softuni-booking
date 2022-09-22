@@ -18,7 +18,8 @@ router.post('/', async(req, res) => {
 
     } catch (err) {
         res.render('create', {
-            title: 'Request Error'
+            title: 'Request Error',
+            error: err.message.split('\n')
         });
     }
 })
