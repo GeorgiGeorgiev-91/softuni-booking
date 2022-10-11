@@ -5,9 +5,9 @@ module.exports = (jwtSecret) => (req, res, next) => {
     if (token) {
         try {
             const data = jwt.verify(token, jwtSecret);
-            res.user = data;
+            req.user = data;
         } catch (err) {
-            res.cookie('jwt', '', { maxAge: 0 });
+            res.clearCookie('jwt');
             return res.redirect('/login');
         }
     }
