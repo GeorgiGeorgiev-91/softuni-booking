@@ -1,9 +1,10 @@
+const { hasRole } = require('../middlewares/guards');
 const { createFacility, getAllFacilities, addFacilities } = require('../services/facilityService');
 const { getById } = require('../services/roomService');
 
 const facilityController = require('express').Router();
 
-facilityController.get('/create', async(req, res) => {
+facilityController.get('/create', hasRole('admin'), async(req, res) => {
     res.render('createFacility', {
         title: 'Create New Facility'
     });

@@ -7,8 +7,9 @@ const roleSchema = new Schema({
 const userSchema = new Schema({
     username: { type: String, minlength: 3 },
     hashedPassword: { type: String, required: true },
-    roles: { type: [roleSchema], default: ['user'] }
+    roles: { type: [{ type: String, enum: ['user', 'admin'] }], default: ['user'] }
 });
+// roles: { type: [roleSchema], default: ['user'] }
 
 userSchema.index({ username: 1 }, {
     unique: true,

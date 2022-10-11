@@ -31,7 +31,7 @@ authController.post('/register', async(req, res) => {
         if (req.body.username.trim() == '' || req.body.password.trim() == '') {
             throw new Error('All fields are required!');
         }
-        if (req.body.password.trim() == req.body.repass.trim()) {
+        if (req.body.password.trim() != req.body.repass.trim()) {
             throw new Error('Passwords don\'t match!');
         }
         const result = await register(req.body.username, req.body.password);
