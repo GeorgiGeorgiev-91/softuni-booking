@@ -12,7 +12,7 @@ router.post('/', async(req, res) => {
     // console.log(req.body);
 
     try {
-        const result = await create(req.body);
+        const result = await create(req.body, req.user._id);
 
         res.redirect('/catalog/' + result._id);
 
