@@ -5,7 +5,6 @@
 @import url('./layout-section.css');
 @import url('./layout-position.css');
 @import url('./layout-forms.css');
-
 .style-divider {
     background-color: red;
     height: 8px;
@@ -40,9 +39,8 @@ html {
     min-height: 100vh;
 }
 
-#page-content>header {
 
-}
+/* #page-content>header {} */
 
 #page-content>main {
     padding-bottom: 48px;
@@ -68,4 +66,8 @@ html {
     margin: 32px;
     background-color: hsl(var(--action-color), var(--action-s), 25%);
     box-shadow: var(--shadow);
+}
+
+.field-error {
+    border: 1px solid red;
 }
